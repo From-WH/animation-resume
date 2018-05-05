@@ -37,7 +37,7 @@ html{
 
 #code{
     position:fixed;
-    width:50%; 
+    width:30%; 
     height: 100vh;
     left:0;
     border:1px solid transparent;
@@ -56,10 +56,9 @@ html{
 #paper{
     position:fixed;
     right:0;
-    width:50%;
+    width:30%;
     height:100vh;
-    background:#DDD;
-    border:1px solid #CCC；
+    background:rgb(63, 82, 99);
     display:fix;
     justify-content:center;
     align-items:center;

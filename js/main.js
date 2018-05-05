@@ -1,3 +1,36 @@
+
+function writeCode(prefix, code, fn) {
+    let domCode = document.querySelector('#code')
+    let n = 0
+    let id = setInterval(() => {
+        n += 1
+        domCode.innerHTML = Prism.highlight(prefix + code.substring(0, n), Prism.languages.css);
+        styleTag.innerHTML = prefix + code.substring(0, n)
+        domCode.scrollTop = domCode.scrollHeight
+        if (n >= code.length) {
+            window.clearInterval(id)
+            fn && fn.call()
+        }
+    }, 50)
+}
+
+function writemarkDown(markdown, fn) {
+    let domPaper = document.querySelector('#paper>.content')
+    let n = 0
+    let id = setInterval(() => {
+        n += 1
+        domPaper.innerHTML = markdown.substring(0, n)
+        domPaper.scrollTop = domPaper.scrollHeight
+        if (n >= markdown.length) {
+            window.clearInterval(id)
+            fn && fn.call()
+        }
+    }, 70)
+}
+
+
+
+
 var result = `/*
 *面试官，您好
 *我叫王航
@@ -37,6 +70,15 @@ html{
     color: #DD4A68;
 }
 
+/*
+*哎呀，这个滚动条好丑呀，我们把它干掉吧
+
+*/
+::-webkit-scrollbar {display:none}
+#code{
+    overflow-y: scroll;
+}
+
 #code{
     position:fixed;
     width:30%; 
@@ -44,14 +86,7 @@ html{
     left:0;
     border:1px solid transparent;
 }
-/*
-*哎呀，这个滚动条好丑呀，我们把它干掉吧
 
-*/
-::-webkit-scrollbar {display:none}
-#code-wrapper{
-    overflow-y: scroll;
-}
 
 /*下面我们来准备一张白纸吧*/
 #paper{
@@ -91,10 +126,12 @@ var md = `
 # 自我介绍
 
 我叫王航
-
 1992 年 10 月出生
+
 西安交通大学成人自考在读
+
 自学前端半年
+
 想要应聘贵公司的前端开发岗位
 
 # 技能介绍
@@ -114,39 +151,6 @@ var md = `
 - 陪女朋友逛街
 `
 
-
-
-function writeCode(prefix, code, fn) {
-    let domCode = document.querySelector('#code')
-    let n = 0
-    let id = setInterval(() => {
-        n += 1
-        domCode.innerHTML = Prism.highlight(prefix + code.substring(0, n), Prism.languages.css);
-        styleTag.innerHTML = prefix + code.substring(0, n)
-        domCode.scrollTop = domCode.scrollHeight
-        if (n >= code.length) {
-            window.clearInterval(id)
-            fn && fn.call()
-        }
-    }, 50)
-}
-
-
-function writemarkDown(markdown, fn) {
-    let domPaper = document.querySelector('#paper>.content')
-    let n = 0
-    let id = setInterval(() => {
-        n += 1
-        domPaper.innerHTML = markdown.substring(0, n)
-        domPaper.scrollTop = domPaper.scrollHeight
-        if (n >= markdown.length) {
-            window.clearInterval(id)
-            fn && fn.call()
-        }
-    }, 70)
-}
-
-
 writeCode('', result, () => {
     createPaper(() => {
         writeCode(result , result2, () => {
@@ -160,6 +164,8 @@ writeCode('', result, () => {
         })
     })
 })
+
+
 
 function createPaper(fn){
     var paper = document.createElement('div') 

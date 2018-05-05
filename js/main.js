@@ -14,7 +14,7 @@ var result = `/*
     transition: all 0.5s;
 }
 html{
-    background: rgb(177,177,177);
+    background: #b8b2b7;
     font-size:18px;
 }
 #code{
@@ -59,7 +59,8 @@ html{
     right:0;
     width:30%;
     height:100vh;
-    background:rgb(63, 82, 99);
+    border:5px solid #EEE;
+    background: #b8b2b7;
     display:fix;
     justify-content:center;
     align-items:center;
@@ -127,7 +128,7 @@ function writeCode(prefix, code, fn) {
             window.clearInterval(id)
             fn && fn.call()
         }
-    }, 0)
+    }, 50)
 }
 
 
@@ -142,7 +143,7 @@ function writemarkDown(markdown, fn) {
             window.clearInterval(id)
             fn && fn.call()
         }
-    }, 0)
+    }, 70)
 }
 
 

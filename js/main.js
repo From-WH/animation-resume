@@ -9,10 +9,12 @@ var result = `/*
 *接下来让我先来添加一些样式
 */
 *{
+    margin:0;
+    padding:0;
     transition: all 0.5s;
 }
 html{
-    background: rgb(63, 82, 99);
+    background: rgb(177,177,177);
     font-size:18px;
 }
 #code{
@@ -42,16 +44,15 @@ html{
     left:0;
     border:1px solid transparent;
 }
+/*
+*哎呀，这个滚动条好丑呀，我们把它干掉吧
 
-/* 加一个好看的呼吸效果吧 */
-#code{
-  animation: breath 0.5s infinite alternate-reverse;
-}
-/*哎呀，这个滚动条好丑呀，我们把它干掉吧*/
+*/
 ::-webkit-scrollbar {display:none}
-#code{
+#code-wrapper{
     overflow-y: scroll;
 }
+
 /*下面我们来准备一张白纸吧*/
 #paper{
     position:fixed;
@@ -69,8 +70,6 @@ html{
 }
 
 `
-
-
 
 var result2 = `/*
 *来让我在右侧纸中简单介绍一下我自己
@@ -93,12 +92,14 @@ var md = `
 我叫王航
 
 1992 年 10 月出生
+西安交通大学成人自考在读
 自学前端半年
 想要应聘贵公司的前端开发岗位
 
 # 技能介绍
 
 - 对HTML、css、js都可熟练使用
+- 对前后端交互熟悉
 
 # 项目介绍
 - 轮播图
@@ -106,17 +107,10 @@ var md = `
 - 导航网站
 
 # 兴趣爱好
-- 打篮球
-- 踢足球
-# 兴趣爱好
-- 打篮球
-- 踢足球
-# 兴趣爱好
-- 打篮球
-- 踢足球
-# 兴趣爱好
-- 打篮球
-- 踢足球
+- 码代码
+- 健身
+- 看动漫
+- 陪女朋友逛街
 `
 
 

@@ -1,0 +1,20 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    display: block;
+    text-align: '';
+    clear: both;
+}
+.token.selector{
+    color: #000;
+}
+.token.property{
+    color: #000;
+}
+.token.function{
+    color: #000;
+}
+#paper{
+    overflow-y: scroll;
+}

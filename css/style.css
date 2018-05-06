@@ -22,3 +22,11 @@ body{
 #code-wrapper{
     margin-top: -285px;
 }
+@keyframes breath{
+    0%{
+      box-shadow: 0 0 10px rgb(255, 255, 255)
+    }
+    100%{
+      box-shadow: 0 0 10px rgba(0,0,0,0.2)
+    }
+  }

@@ -11,7 +11,7 @@ function writeCode(prefix, code, fn) {
             window.clearInterval(id)
             fn && fn.call()
         }
-    }, 50)
+    },50)
 }
 
 function writemarkDown(markdown, fn) {
@@ -27,8 +27,6 @@ function writemarkDown(markdown, fn) {
         }
     }, 70)
 }
-
-
 
 
 var result = `/*
@@ -53,12 +51,25 @@ html{
 #code{
     border:1px solid #FFF;
     padding:16px;
+    margin:16px 16px;
+    position:fixed;
+    width:30%; 
+    height: 100vh;
+    left:0;
 }
+/*
+*哎呀，马上要出现滚动条了，我们把它干掉吧！
+*/
+::-webkit-scrollbar {display:none}
+#code{
+    overflow-y: scroll;
+}
+
 /*
 *接下来我们把代码高亮一下吧
 */
 #code{
-    color: #DDD;
+    color: #CCC;
 }
 .token.selector{
     color: #690;
@@ -71,40 +82,37 @@ html{
 }
 
 /*
-*哎呀，这个滚动条好丑呀，我们把它干掉吧
-
+*我们把border隐藏起来好了
+*顺便给它加个呼吸效果好了
 */
-::-webkit-scrollbar {display:none}
 #code{
-    overflow-y: scroll;
-}
-
-#code{
-    position:fixed;
-    width:30%; 
-    height: 100vh;
-    left:0;
-    border:1px solid transparent;
+    border:transparent;
+    animation: breath 1s infinite alternate-reverse;
 }
 
 
-/*下面我们来准备一张白纸吧*/
+/*
+*好了～样式就先写到这里
+*下面来准备一片区域，来做一下自我介绍吧
+*/
 #paper{
     position:fixed;
     right:0;
     width:30%;
     height:100vh;
-    border:5px solid #EEE;
+    border:1px solid black;
+    margin:16px 16px;
+    padding:16px;
     background: #b8b2b7;
     display:fix;
     justify-content:center;
     align-items:center;
-    padding:16px;
-    margin:16px 0 16px;
-    transform:rotate(360deg);
-    overflowhiden
 }
-
+/*给它也加上呼吸效果好了*/
+#paper{
+    border:transparent;
+    animation: breath 1s infinite alternate-reverse;
+}
 `
 
 var result2 = `/*
@@ -117,7 +125,7 @@ var result3 =`
 *接下来我们把它变成markdown的形式吧
 */
 `
-var result3 =`
+var result4 =`
 /*好了，以上就是我的动画简历
 *谢谢您的观看
 */
@@ -156,8 +164,8 @@ writeCode('', result, () => {
         writeCode(result , result2, () => {
             writemarkDown(md, () => {
                 writeCode(result + result2 , result3,()=>{
-                    convertMarkdownToHtml(result + result2 + result3,()=>{
-
+                    convertMarkdownToHtml(()=>{
+                        writeCode(result + result2 + result3 , result4)
                     })
                 })
             })

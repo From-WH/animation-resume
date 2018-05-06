@@ -100,7 +100,7 @@ html{
     right:0;
     width:30%;
     height:100vh;
-    border:1px solid black;
+    border: 1px solid black;
     margin:16px 16px;
     padding:16px;
     background: #b8b2b7;
@@ -148,9 +148,9 @@ var md = `
 - 对前后端交互熟悉
 
 # 项目介绍
-- 轮播图
-- Canvas画板
-- 导航网站
+- [轮播图](https://from-wh.github.io/slides-demo-3/)
+- [Canvas画板](https://from-wh.github.io/Canvas-2018/canvas3.0/)
+- [导航网站](https://from-wh.github.io/Work/%E5%AF%BC%E8%88%AA%E7%BD%91%E7%AB%99/index%E5%B0%81%E8%A3%85%E6%88%90%E5%87%BD%E6%95%B0.html)
 
 # 兴趣爱好
 - 码代码

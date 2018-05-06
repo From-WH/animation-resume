@@ -49,13 +49,13 @@ html{
     font-size:18px;
 }
 #code{
+    height: 100vh;
+    width:30%; 
     border:1px solid #FFF;
+    position:fixed;
+    left:0;
     padding:16px;
     margin:16px 16px;
-    position:fixed;
-    width:30%; 
-    height: 100vh;
-    left:0;
 }
 /*
 *哎呀，马上要出现滚动条了，我们把它干掉吧！

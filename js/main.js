@@ -69,7 +69,7 @@ html{
 *接下来我们把代码高亮一下吧
 */
 #code{
-    color: #CCC;
+    color: #555;
 }
 .token.selector{
     color: #690;

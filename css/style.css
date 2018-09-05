@@ -16,11 +16,10 @@ body{
     color: #000;
 }
 #paper{
-    margin-top: -285px;
     overflow-y: scroll;
 }
 #code-wrapper{
-    margin-top: -285px;
+    margin-top: -265px;
 }
 @keyframes breath{
     0%{

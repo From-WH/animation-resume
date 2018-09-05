@@ -46,7 +46,7 @@ var result = `/*
 }
 html{
     background: #b8b2b7;
-    font-size:18px;
+    font-size:16px;
 }
 #code{
     height: 100vh;
